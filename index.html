@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Julian Hon's portfolio of software projects and experience.">
+  <title>Julian Hon — Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="header wrap">
+    <a class="wordmark" href="#">Julian Hon<span class="wordmark-dot">.</span></a>
+    <nav aria-label="Main navigation"><a href="#work">Projects</a><a href="#about">About</a><a href="#contact">Contact <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main id="main">
+    <section class="hero wrap">
+      <p class="eyebrow">PERSONAL PORTFOLIO</p>
+      <h1>Building useful things<br>with <em>care.</em></h1>
+      <div class="hero-bottom"><p>Computer science student and software developer<br class="desktop-break"> interested in reliable systems and thoughtful experiences.</p><a class="text-link" href="#work">Explore my projects <span aria-hidden="true">↓</span></a></div>
+    </section>
+    <section class="work wrap" id="work" aria-labelledby="work-heading">
+      <div class="section-heading"><h2 id="work-heading">Selected projects</h2><span>A few things worth sharing</span></div>
+      <div class="project-grid">
+        <button class="project" data-project="0" aria-haspopup="dialog">
+          <span class="project-art project-image"><img src="images/techhub-superapp.png" alt="TechHub Superapp project preview"></span>
+          <span class="project-meta"><span>01 / SOFTWARE DEVELOPMENT</span><span>↗</span></span><span class="project-name">TechHub Superapp</span><span class="project-description">An internal order-management platform for picking, QA, fulfillment, and delivery.</span>
+        </button>
+        <button class="project" data-project="1" aria-haspopup="dialog">
+          <span class="project-art project-image"><img src="images/boba-kiosk.png" alt="HTeaML project preview"></span>
+          <span class="project-meta"><span>02 / FULL-STACK WEB APP</span><span>↗</span></span><span class="project-name">HTeaML</span><span class="project-description">A self-ordering application for customer and employee-assisted purchases.</span>
+        </button>
+        <button class="project project-wide" data-project="2" aria-haspopup="dialog">
+          <span class="project-art art-walk" aria-hidden="true"><span class="walk-copy"><span class="mini-label">TAKE THE LONG WAY</span><span class="walk-title">Less scrolling.<br>More wandering.</span><span class="walk-subtitle">A collection of places to pause.</span></span><span class="landscape"><span class="sun"></span><span class="hill hill-back"></span><span class="hill hill-front"></span><span class="trail"></span></span></span>
+          <span class="project-meta"><span>03 / WEB APPLICATION</span><span>↗</span></span><span class="project-name">Sustainable Architect</span><span class="project-description">A building sustainability evaluator with standards-based recommendations.</span>
+        </button>
+      </div>
+    </section>
+    <section class="about wrap" id="about" aria-labelledby="about-heading"><div><p class="eyebrow">THE PERSON BEHIND THE PROJECTS</p><h2 id="about-heading">Always a work<br>in <em>progress.</em></h2><img class="portrait" src="images/face.png" alt="Portrait of Julian Hon"></div><div class="about-content"><p>I’m Julian, a computer science student at Texas A&M University with a minor in cybersecurity. I build software that helps people get work done, from internal operations tools to accessible customer-facing experiences.</p><p class="muted">I enjoy designing practical systems, learning how they work end to end, and making them more reliable along the way.</p><h3>Things I work with</h3><ul class="skills"><li>Java</li><li>Python</li><li>JavaScript</li><li>TypeScript</li><li>React</li><li>Node.js</li><li>Express.js</li><li>SQL</li><li>PostgreSQL</li><li>MongoDB</li><li>Git</li><li>REST APIs</li></ul></div></section>
+    <section class="contact wrap" id="contact"><p class="eyebrow">SAY HELLO</p><h2>Good things start<br>with a <em>conversation.</em></h2><p>I’m always open to connecting about software, systems, and new opportunities.</p><a class="contact-placeholder" href="mailto:julian.hon4@gmail.com">julian.hon4@gmail.com <span aria-hidden="true">↗</span></a></section>
+  </main>
+  <footer class="wrap"><span>© <span id="year">2026</span> Julian Hon</span><span>Made with care, and a little curiosity.</span><a href="#">Back to top ↑</a></footer>
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><button class="dialog-close" aria-label="Close project details">×</button><p class="eyebrow">PROJECT DETAILS</p><h2 id="dialog-title"></h2><p id="dialog-description"></p><button class="dialog-done">Back to projects <span aria-hidden="true">↗</span></button></dialog>
+  <script src="script.js"></script>
+</body>
+</html>
