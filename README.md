@@ -1,6 +1,6 @@
 # Julian Hon Portfolio
 
-A simple, responsive portfolio for Julian Hon, built with plain HTML, CSS, and JavaScript. It highlights software projects, technical skills, and contact information without a build step or framework.
+A responsive portfolio for Julian Hon, built with plain HTML, CSS, and JavaScript. The landing page has a minimal black and white theme with switchable waveform and CD animations. The CD archive page is a placeholder for a future collection.
 
 ## Local preview
 
@@ -18,7 +18,9 @@ Then visit `http://localhost:8000`.
 | --- | --- |
 | `index.html` | Page structure and portfolio content |
 | `styles.css` | Layout, typography, responsive styling, and image presentation |
+| `theme.css` | Minimal theme, responsive layout, landing animations, and CD archive styling |
 | `script.js` | Project detail dialog content and interaction |
+| `cd-library.html` | Placeholder page for the future digital CD library |
 | `images/` | Portrait and project preview images |
 
 ## Updating content
