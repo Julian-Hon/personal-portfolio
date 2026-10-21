@@ -27,6 +27,7 @@ Then visit `http://localhost:8000`.
 ## Updating content
 
 - Edit `index.html` to update the introduction, project card text, contact details, and project image paths.
+- The contact cards in `index.html` link to GitHub and email. Replace the LinkedIn, resume, and certifications slots with links when their URLs or PDF are available. Credly is one option for a public certifications profile.
 - Edit `about.html` to update the biography, skills, and portrait.
 - Edit the `projects` list in `script.js` to update the descriptions displayed after a project card is selected.
 - Add new images to `images/` and reference them from the matching project card in `index.html`.
