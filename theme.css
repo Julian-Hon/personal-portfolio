@@ -64,6 +64,9 @@ button { cursor: pointer; }
 .project:hover .project-art { filter: grayscale(1) brightness(.92); }
 .project-image { background: var(--panel); }
 .about { margin-top: 90px; }
+.about-page { margin-top: 0; }
+.about-page h1 { font-family: var(--sans); font-weight: 600; letter-spacing: -.06em; }
+.about-page h1 em { font-style: normal; font-weight: 400; color: var(--muted); }
 .about h2, .contact h2, .archive-feature-copy h2, .archive-heading h1 { font-family: var(--sans); font-weight: 600; letter-spacing: -.06em; }
 .about h2 em, .contact h2 em, .archive-heading h1 em { font-style: normal; font-weight: 400; color: var(--muted); }
 .portrait { filter: grayscale(1); }

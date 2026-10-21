@@ -5,19 +5,21 @@ const projects = [
   { title: 'ESP32 Music Display', description: 'An ESP32-powered display that shows the currently playing album art, song title, artist, and album.' }
 ];
 const dialog = document.querySelector('#project-dialog');
-document.querySelectorAll('[data-project]').forEach(button => {
-  button.addEventListener('click', () => {
-    const project = projects[Number(button.dataset.project)];
-    document.querySelector('#dialog-title').textContent = project.title;
-    document.querySelector('#dialog-description').textContent = project.description;
-    dialog.showModal();
+if (dialog) {
+  document.querySelectorAll('[data-project]').forEach(button => {
+    button.addEventListener('click', () => {
+      const project = projects[Number(button.dataset.project)];
+      document.querySelector('#dialog-title').textContent = project.title;
+      document.querySelector('#dialog-description').textContent = project.description;
+      dialog.showModal();
+    });
   });
-});
-document.querySelectorAll('.dialog-close, .dialog-done').forEach(button => button.addEventListener('click', () => dialog?.close()));
-dialog?.addEventListener('click', event => {
-  const bounds = dialog.getBoundingClientRect();
-  if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
-});
+  document.querySelectorAll('.dialog-close, .dialog-done').forEach(button => button.addEventListener('click', () => dialog.close()));
+  dialog.addEventListener('click', event => {
+    const bounds = dialog.getBoundingClientRect();
+    if (event.clientX < bounds.left || event.clientX > bounds.right || event.clientY < bounds.top || event.clientY > bounds.bottom) dialog.close();
+  });
+}
 document.querySelector('#year').textContent = new Date().getFullYear();
 
 const paletteToggle = document.querySelector('#palette-toggle');

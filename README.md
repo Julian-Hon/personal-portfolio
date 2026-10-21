@@ -16,7 +16,8 @@ Then visit `http://localhost:8000`.
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | Page structure and portfolio content |
+| `index.html` | Home page, projects, and contact information |
+| `about.html` | About page, portrait, and technical skills |
 | `styles.css` | Layout, typography, responsive styling, and image presentation |
 | `theme.css` | Minimal theme, responsive layout, landing animations, and CD archive styling |
 | `script.js` | Project detail dialog content and interaction |
@@ -25,7 +26,8 @@ Then visit `http://localhost:8000`.
 
 ## Updating content
 
-- Edit `index.html` to update the introduction, project card text, skills, contact details, and image file paths.
+- Edit `index.html` to update the introduction, project card text, contact details, and project image paths.
+- Edit `about.html` to update the biography, skills, and portrait.
 - Edit the `projects` list in `script.js` to update the descriptions displayed after a project card is selected.
 - Add new images to `images/` and reference them from the matching project card in `index.html`.
 
