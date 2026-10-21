@@ -23,11 +23,12 @@ Then visit `http://localhost:8000`.
 | `script.js` | Project detail dialog content and interaction |
 | `cd-library.html` | Placeholder page for the future digital CD library |
 | `images/` | Portrait and project preview images |
+| `files/Julian_Hon_Resume.pdf` | Resume linked from the contact section |
 
 ## Updating content
 
 - Edit `index.html` to update the introduction, project card text, contact details, and project image paths.
-- The contact cards in `index.html` link to GitHub and email. Replace the LinkedIn, resume, and certifications slots with links when their URLs or PDF are available. Credly is one option for a public certifications profile.
+- The contact links in `index.html` point to LinkedIn, GitHub, email, the resume PDF, and Credly. Replace the PDF in `files/` when the resume changes.
 - Edit `about.html` to update the biography, skills, and portrait.
 - Edit the `projects` list in `script.js` to update the descriptions displayed after a project card is selected.
 - Add new images to `images/` and reference them from the matching project card in `index.html`.
