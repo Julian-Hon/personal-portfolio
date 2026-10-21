@@ -32,9 +32,11 @@ const albums = {
 };
 
 const cases = [...document.querySelectorAll('.shelf-album')];
+const shelfScroll = document.querySelector('.shelf-scroll');
 const emptyState = document.getElementById('details-empty');
 const details = document.getElementById('details-content');
 let selectedAlbum = null;
+let scrollTimer;
 
 cases.forEach((albumCase) => {
   albumCase.addEventListener('click', () => {
@@ -49,6 +51,13 @@ cases.forEach((albumCase) => {
 
     emptyState.hidden = selectedAlbum !== null;
     details.hidden = selectedAlbum === null;
+    if (shelfScroll.scrollWidth > shelfScroll.clientWidth) {
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => shelfScroll.scrollTo({
+        left: selectedAlbum ? shelfScroll.scrollWidth - shelfScroll.clientWidth : 0,
+        behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth'
+      }), 250);
+    }
     if (!selectedAlbum) return;
 
     const album = albums[selectedAlbum];

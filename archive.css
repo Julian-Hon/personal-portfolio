@@ -7,28 +7,34 @@
 .shelf-section { margin-top: 58px; border-top: 1px solid var(--ink); }
 .shelf-label { display: flex; justify-content: space-between; gap: 20px; padding: 15px 0; color: var(--muted); font: 10px Consolas, 'Courier New', monospace; letter-spacing: 1px; }
 .shelf-scroll { overflow-x: auto; scrollbar-color: var(--line) transparent; }
-.shelf-scene { position: relative; min-width: 680px; height: 420px; overflow: hidden; isolation: isolate; background: linear-gradient(180deg, var(--paper) 0%, var(--panel) 78%, var(--panel) 100%); border: 1px solid var(--line); }
-.shelf-items { position: relative; z-index: 3; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; height: 100%; padding: 42px 44px 0; }
-.shelf-album { display: flex; flex-direction: column; align-items: center; min-width: 0; padding: 0; border: 0; background: transparent; text-align: center; cursor: pointer; color: var(--ink); }
+.shelf-scene { position: relative; min-width: 900px; height: 500px; overflow: hidden; isolation: isolate; background: linear-gradient(180deg, var(--paper) 0%, var(--panel) 78%, var(--panel) 100%); border: 1px solid var(--line); }
+.shelf-items { position: relative; z-index: 3; height: 100%; }
+.shelf-album { position: absolute; z-index: 3; top: 42px; left: var(--slot); display: flex; flex-direction: column; align-items: center; width: 220px; padding: 0; border: 0; background: transparent; text-align: center; cursor: pointer; color: var(--ink); transition: left .65s cubic-bezier(.2,.7,.2,1), top .65s cubic-bezier(.2,.7,.2,1), transform .4s ease; }
+.shelf-album:nth-child(2) { z-index: 4; }
+.shelf-album:nth-child(3) { z-index: 5; }
+.shelf-album:hover, .shelf-album:focus-visible { z-index: 8; }
+.shelf-album.is-selected { z-index: 10; left: 68%; top: 160px; }
 .shelf-album:focus-visible { outline: 2px solid var(--ink); outline-offset: -3px; }
 .case-float { display: grid; place-items: center; width: 100%; height: 230px; animation: case-float 4.4s ease-in-out var(--float-delay) infinite; }
-.jewel-case { position: relative; display: block; width: min(19vw, 218px); min-width: 156px; aspect-ratio: 1; padding: 8px 7px 8px 18px; border: 1px solid #b5bbc1; background: linear-gradient(90deg, #aeb4bb 0%, #f5f7f8 9%, #cbd0d5 14%, #f5f7f8 20%, #e1e4e7 100%); box-shadow: 12px 17px 26px #0003, inset 0 0 0 2px #ffffff85; transform: perspective(900px) rotateY(var(--tilt)) rotateZ(var(--roll)); transform-origin: 50% 100%; transition: transform .55s cubic-bezier(.2,.7,.2,1), box-shadow .55s ease; }
+.jewel-case { position: relative; display: block; width: 218px; aspect-ratio: 1; padding: 8px 7px 8px 18px; border: 1px solid #b5bbc1; background: linear-gradient(90deg, #aeb4bb 0%, #f5f7f8 9%, #cbd0d5 14%, #f5f7f8 20%, #e1e4e7 100%); box-shadow: 12px 17px 26px #0003, inset 0 0 0 2px #ffffff85; transform: perspective(900px) rotateY(-13deg) rotateZ(-4deg); transform-origin: 50% 100%; transition: transform .55s cubic-bezier(.2,.7,.2,1), box-shadow .55s ease; }
 .jewel-case::after { content: ''; position: absolute; inset: 3px; border: 1px solid #fff8; pointer-events: none; }
 .case-spine { position: absolute; left: 3px; top: 4px; bottom: 4px; width: 11px; border-right: 1px solid #868d9580; background: linear-gradient(90deg, #f9fbfdc4, #abb1b9a0 54%, #f4f6f9b8); }
 .case-cover { display: block; width: 100%; height: 100%; overflow: hidden; border: 1px solid #7779; background: #fff; }
 .case-cover img { display: block; width: 100%; height: 100%; object-fit: cover; }
 .case-glare { position: absolute; inset: 3px; pointer-events: none; background: linear-gradient(115deg, #fff8 0%, #fff1 26%, transparent 31%, transparent 64%, #fff3 74%, transparent 81%); }
 .shelf-album:hover:not(.is-selected) .case-float, .shelf-album:focus-visible:not(.is-selected) .case-float { animation-play-state: paused; }
-.shelf-album:hover:not(.is-selected) .jewel-case, .shelf-album:focus-visible:not(.is-selected) .jewel-case { transform: perspective(900px) translateY(-27px) translateZ(45px) rotateY(calc(var(--tilt) / 2)) rotateZ(0deg) scale(1.06); box-shadow: 20px 30px 36px #0004; }
+.shelf-album:hover:not(.is-selected), .shelf-album:focus-visible:not(.is-selected) { transform: translate(18px, -18px); }
+.shelf-album:hover:not(.is-selected) .jewel-case, .shelf-album:focus-visible:not(.is-selected) .jewel-case { transform: perspective(900px) translateZ(45px) rotateY(-13deg) rotateZ(-4deg) scale(1.04); box-shadow: 20px 30px 36px #0004; }
 .shelf-album.is-selected .case-float { animation: none; }
-.shelf-album.is-selected .jewel-case { transform: perspective(900px) translateY(35px) rotateX(73deg) rotateZ(-8deg) scale(1.08); box-shadow: 13px 35px 24px #0004; }
-.case-caption { display: flex; flex-direction: column; gap: 4px; max-width: 100%; margin-top: 73px; }
+.shelf-album.is-selected .jewel-case { transform: perspective(900px) rotateX(58deg) rotateZ(-4deg) scale(1.15); box-shadow: 13px 35px 24px #0004; }
+.case-caption { display: flex; flex-direction: column; gap: 4px; width: 180px; margin-top: 155px; transition: opacity .2s ease; }
+.shelf-album.is-selected .case-caption { opacity: 0; }
 .case-caption strong { font-size: 14px; font-weight: 600; letter-spacing: -.02em; }
 .case-caption strong span { font-size: 10px; font-weight: 500; }
 .case-caption small { color: var(--muted); font: 9px Consolas, 'Courier New', monospace; letter-spacing: .5px; }
 .shelf-album.is-selected .case-caption strong { text-decoration: underline; text-underline-offset: 5px; }
-.shelf-top { position: absolute; z-index: 1; top: 271px; left: 18px; right: 18px; height: 35px; background: linear-gradient(180deg, #fff8, #d2d2d2); border: 1px solid #a9a9a9; transform: perspective(650px) rotateX(35deg); transform-origin: center bottom; box-shadow: 0 12px 25px #0002; }
-.shelf-front { position: absolute; z-index: 2; top: 302px; left: 18px; right: 18px; height: 20px; background: linear-gradient(180deg, #d0d0d0, #b7b7b7); border: 1px solid #a5a5a5; box-shadow: 0 13px 18px #0002; }
+.shelf-top { position: absolute; z-index: 1; top: 296px; left: 18px; right: 18px; height: 110px; background: linear-gradient(180deg, #fff8, #d2d2d2); border: 1px solid #a9a9a9; transform: perspective(650px) rotateX(48deg); transform-origin: center bottom; box-shadow: 0 12px 25px #0002; }
+.shelf-front { position: absolute; z-index: 2; top: 390px; left: 18px; right: 18px; height: 20px; background: linear-gradient(180deg, #d0d0d0, #b7b7b7); border: 1px solid #a5a5a5; box-shadow: 0 13px 18px #0002; }
 @keyframes case-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-6px); } }
 
 .album-details { min-height: 260px; border-bottom: 1px solid var(--line); }
@@ -57,8 +63,7 @@ body.dark-mode .shelf-front { background: linear-gradient(180deg, #444, #292929)
 @media (max-width: 760px) {
   .shelf-section { margin-top: 46px; }
   .shelf-label { font-size: 9px; }
-  .shelf-scene { min-width: 660px; }
-  .jewel-case { width: 175px; }
+  .shelf-scene { min-width: 900px; }
   .details-content { grid-template-columns: minmax(0, 1fr); gap: 40px; }
   .details-art { max-width: 320px; }
 }
