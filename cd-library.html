@@ -3,19 +3,66 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="A preview of Julian Hon's upcoming digital CD library.">
+  <meta name="description" content="Explore Julian Hon's CD collection on an interactive virtual shelf.">
   <title>CD Archive — Julian Hon</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="theme.css?v=20261021-2">
+  <link rel="stylesheet" href="archive.css">
 </head>
 <body class="archive-page">
   <a class="skip-link" href="#main">Skip to content</a>
-  <header class="header wrap"><a class="wordmark" href="index.html">Julian Hon<span class="wordmark-dot">.</span></a><nav aria-label="Main navigation"><a href="index.html#work">Projects</a><a href="cd-library.html" aria-current="page">CD Archive</a><a href="about.html">About</a><a href="index.html#contact">Contact <span aria-hidden="true">↗</span></a></nav></header>
+  <header class="header wrap">
+    <a class="wordmark" href="index.html">Julian Hon<span class="wordmark-dot">.</span></a>
+    <nav aria-label="Main navigation"><a href="index.html#work">Projects</a><a href="cd-library.html" aria-current="page">CD Archive</a><a href="about.html">About</a><a href="index.html#contact">Contact <span aria-hidden="true">↗</span></a></nav>
+  </header>
   <main id="main" class="archive-main wrap">
-    <div class="archive-heading"><p class="eyebrow">PERSONAL COLLECTION / VOL. 01</p><h1>The CD <em>archive.</em></h1><p>A digital home for the albums, artwork, and memories behind my physical collection. The catalog is taking shape.</p></div>
-    <div class="archive-stage"><div class="archive-jewel" aria-hidden="true"><div class="jewel-spine">JULIAN HON · CD ARCHIVE · VOL. 01</div><div class="jewel-cover"><div class="jewel-header"><span>PERSONAL LIBRARY</span><span>001 / ∞</span></div><div class="jewel-disc"><span></span></div><div class="jewel-footer"><strong>THE SOUNDTRACK<br>SO FAR</strong><span>COMING SOON</span></div></div></div><div class="archive-readout"><span class="archive-readout-label">CATALOG STATUS <span class="live-dot" aria-hidden="true"></span></span><strong>Collecting<br>the stories.</strong><p>Albums to browse. Artwork to revisit. Notes about why each one matters.</p><div class="readout-line"><span>INDEX</span><span>IN PROGRESS</span></div><div class="readout-line"><span>FORMAT</span><span>COMPACT DISC</span></div><a href="index.html#work">← Back to projects</a></div></div>
+    <div class="archive-heading">
+      <p class="eyebrow">PERSONAL COLLECTION / VOL. 01</p>
+      <h1>The CD <em>archive.</em></h1>
+      <p>A little shelf for albums I keep coming back to. Move across the cases and select one to see what is inside.</p>
+    </div>
+
+    <section class="shelf-section" aria-label="CD collection">
+      <div class="shelf-label"><span>ON THE SHELF</span><span>03 CASES · SELECT TO EXPLORE</span></div>
+      <div class="shelf-scroll">
+        <div class="shelf-scene">
+          <div class="shelf-items">
+            <button class="shelf-album" type="button" data-album="sour" aria-pressed="false" aria-controls="album-details" style="--tilt:-14deg;--roll:-3deg;--float-delay:0s">
+              <span class="case-float"><span class="jewel-case"><span class="case-spine"></span><span class="case-cover"><img src="images/albums/sour.jpg" alt="" width="800" height="800"></span><span class="case-glare"></span></span></span>
+              <span class="case-caption"><strong>SOUR</strong><small>OLIVIA RODRIGO · 2021</small></span>
+            </button>
+            <button class="shelf-album" type="button" data-album="1989" aria-pressed="false" aria-controls="album-details" style="--tilt:10deg;--roll:2deg;--float-delay:-1.4s">
+              <span class="case-float"><span class="jewel-case"><span class="case-spine"></span><span class="case-cover"><img src="images/albums/1989-deluxe.jpg" alt="" width="800" height="800"></span><span class="case-glare"></span></span></span>
+              <span class="case-caption"><strong>1989 <span>(DELUXE)</span></strong><small>TAYLOR SWIFT · 2014</small></span>
+            </button>
+            <button class="shelf-album" type="button" data-album="mylo" aria-pressed="false" aria-controls="album-details" style="--tilt:-9deg;--roll:3deg;--float-delay:-2.6s">
+              <span class="case-float"><span class="jewel-case"><span class="case-spine"></span><span class="case-cover"><img src="images/albums/mylo-xyloto.jpg" alt="" width="800" height="800"></span><span class="case-glare"></span></span></span>
+              <span class="case-caption"><strong>MYLO XYLOTO</strong><small>COLDPLAY · 2011</small></span>
+            </button>
+          </div>
+          <div class="shelf-top" aria-hidden="true"></div>
+          <div class="shelf-front" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="album-details" id="album-details" aria-label="Selected CD details" aria-live="polite">
+      <div class="details-empty" id="details-empty"><span class="details-empty-icon" aria-hidden="true">✳</span><p>Pick a case from the shelf to see the album.</p></div>
+      <article class="details-content" id="details-content" hidden>
+        <img class="details-art" id="details-art" src="" alt="" width="800" height="800">
+        <div class="details-copy">
+          <p class="eyebrow" id="details-number"></p>
+          <h2 id="details-title"></h2>
+          <p class="details-artist" id="details-artist"></p>
+          <p class="details-description" id="details-description"></p>
+          <dl class="details-facts"><div><dt>RELEASED</dt><dd id="details-year"></dd></div><div><dt>TRACKS</dt><dd id="details-tracks"></dd></div><div><dt>FORMAT</dt><dd>CD</dd></div></dl>
+          <a class="details-link" id="details-link" href="" target="_blank" rel="noopener noreferrer">Album on Apple Music <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    </section>
   </main>
   <footer class="wrap"><span>© <span id="year">2026</span> Julian Hon</span><a href="index.html">Back to portfolio ↑</a></footer>
   <script src="script.js"></script>
+  <script src="archive.js"></script>
 </body>
 </html>

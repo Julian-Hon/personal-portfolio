@@ -1,6 +1,6 @@
 # Julian Hon Portfolio
 
-A responsive portfolio for Julian Hon, built with plain HTML, CSS, and JavaScript. The landing page has a minimal black and white theme with switchable waveform and CD animations. The CD archive page is a placeholder for a future collection.
+A responsive portfolio for Julian Hon, built with plain HTML, CSS, and JavaScript. The CD archive presents a small collection as interactive jewel cases on a virtual shelf.
 
 ## Local preview
 
@@ -19,9 +19,11 @@ Then visit `http://localhost:8000`.
 | `index.html` | Home page, projects, and contact information |
 | `about.html` | About page, portrait, and technical skills |
 | `styles.css` | Layout, typography, responsive styling, and image presentation |
-| `theme.css` | Minimal theme, responsive layout, landing animations, and CD archive styling |
+| `theme.css` | Theme, responsive layout, and landing animations |
+| `archive.css` | Virtual shelf, jewel cases, and album detail layout |
 | `script.js` | Project detail dialog content and interaction |
-| `cd-library.html` | Placeholder page for the future digital CD library |
+| `archive.js` | CD selection and album information |
+| `cd-library.html` | Interactive CD archive page |
 | `images/` | Portrait and project preview images |
 | `files/Julian_Hon_Resume.pdf` | Resume linked from the contact section |
 
@@ -31,6 +33,7 @@ Then visit `http://localhost:8000`.
 - The contact links in `index.html` point to LinkedIn, GitHub, email, the resume PDF, and Credly. Replace the PDF in `files/` when the resume changes.
 - Edit `about.html` to update the biography, skills, and portrait.
 - Edit the `projects` list in `script.js` to update the descriptions displayed after a project card is selected.
+- Edit the album entries in `archive.js` and the matching cases in `cd-library.html` to update the CD collection. Keep album covers in `images/albums/`.
 - Add new images to `images/` and reference them from the matching project card in `index.html`.
 
 ## Deployment with GitHub Pages
