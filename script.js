@@ -43,9 +43,7 @@ paletteToggle?.addEventListener('click', () => {
 
 const motionPanel = document.querySelector('.motion-panel');
 if (motionPanel) {
-  const modeButtons = [...document.querySelectorAll('[data-mode]')];
   const word = document.querySelector('#motion-word');
-  const caption = document.querySelector('#motion-caption');
   const canvas = document.querySelector('#signal-canvas');
   const ctx = canvas.getContext('2d');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -68,8 +66,8 @@ if (motionPanel) {
     ctx.clearRect(0, 0, width, height);
     const ink = getComputedStyle(document.body).getPropertyValue('--ink').trim();
     const baseline = height / 2;
-    const moving = !reducedMotion.matches && motionPanel.dataset.motionMode === 'wave';
-    const pulse = moving ? (((time / 5600 + .5) % 1) * (width + 280) - 140) : width / 2;
+    const moving = !reducedMotion.matches;
+    const pulse = moving ? width / 2 + Math.sin(time / 1700) * width * .18 : width / 2;
 
     ctx.strokeStyle = ink;
     ctx.globalAlpha = .2;
@@ -93,13 +91,6 @@ if (motionPanel) {
     ctx.stroke();
     if (!reducedMotion.matches) requestAnimationFrame(drawWave);
   }
-
-  modeButtons.forEach(button => button.addEventListener('click', () => {
-    const mode = button.dataset.mode;
-    motionPanel.dataset.motionMode = mode;
-    modeButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
-    caption.textContent = mode === 'disc' ? 'A COLLECTION ALWAYS IN MOTION' : 'A SIGNAL MOVING THROUGH THE SYSTEM';
-  }));
 
   if (!reducedMotion.matches) {
     setInterval(() => {
